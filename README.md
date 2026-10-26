@@ -1,48 +1,47 @@
 # Bash
 
-Eine Sammlung nützlicher Bash-Skripte für Linux – vor allem für Installation,
-Setup und Wartungsaufgaben, die ich immer wieder brauche.
+A collection of useful Bash scripts for Linux — mainly for installation,
+setup, and maintenance tasks that come up again and again.
 
-## Skripte
+## Scripts
 
 ### `install-rar2fs.sh`
 
-Installiert [rar2fs](https://github.com/hasse69/rar2fs) auf Debian-basierten
-Systemen inklusive einer statisch eingebundenen UnRAR-Bibliothek.
+Installs [rar2fs](https://github.com/hasse69/rar2fs) on Debian-based
+systems, including a statically linked UnRAR library.
 
-- Prüft, dass das Skript als root läuft und auf einer Debian-basierten
-  Distribution ausgeführt wird
-- Installiert die Build-Abhängigkeiten (FUSE 2 API) über `apt-get`
-- Lädt UnRAR und rar2fs in den gewünschten Versionen herunter, verifiziert
-  den Download per SHA256 (für die Standardversion) und baut beides
-  statisch zusammen
-- Installiert das fertige `rar2fs`-Binary nach `/usr/local/bin`
+- Checks that the script is run as root and on a Debian-based distribution
+- Installs the build dependencies (FUSE 2 API) via `apt-get`
+- Downloads UnRAR and rar2fs in the requested versions, verifies the
+  download via SHA256 (for the default version), and builds them together
+  statically
+- Installs the resulting `rar2fs` binary to `/usr/local/bin`
 
-**Verwendung:**
+**Usage:**
 
 ```bash
 sudo ./install-rar2fs.sh
 ```
 
-Versionen lassen sich über Umgebungsvariablen anpassen:
+Versions can be customized via environment variables:
 
 ```bash
 sudo RAR2FS_VERSION=1.29.4 UNRAR_VERSION=6.0.3 ./install-rar2fs.sh
 ```
 
-**Beispiel nach der Installation:**
+**Example after installation:**
 
 ```bash
-rar2fs -o ro /pfad/zu/archiven /pfad/zum/mountpunkt
+rar2fs -o ro /path/to/archives /path/to/mountpoint
 ```
 
-## Nutzung
+## Usage
 
-Jedes Skript ist eigenständig ausführbar. Vor dem Ausführen kurz in das
-Skript schauen, um zu verstehen, was es tut – insbesondere wenn es mit
-`sudo`/root-Rechten läuft.
+Each script is self-contained and executable. Take a quick look at a
+script before running it to understand what it does, especially when it
+runs with `sudo`/root privileges.
 
-## Beitragen
+## Contributing
 
-Weitere Skripte landen einfach als neue Datei in diesem Repo mit einem
-kurzen Eintrag in dieser README.
+New scripts simply get added to this repo as a new file, with a short
+entry added to this README.
